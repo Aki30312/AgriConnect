@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="15" alignment="CENTER"
+<VBox spacing="20" alignment="CENTER"
       xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.agriconnect.controller.LoginController">
@@ -13,22 +13,26 @@
         <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
-    <Label text="AgriConnect Login" style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+    <!-- Card container so it doesn't stretch across the whole window -->
+    <VBox spacing="12" alignment="CENTER" styleClass="card" maxWidth="380">
 
-    <TextField fx:id="emailField" promptText="Email"/>
-    <PasswordField fx:id="passwordField" promptText="Password"/>
+        <Label text="AgriConnect Login" styleClass="title"/>
 
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Login" onAction="#handleLogin"/>
-        <Button text="Clear" onAction="#handleClear"/>
-    </HBox>
+        <TextField fx:id="emailField" promptText="Email" maxWidth="280"/>
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="280"/>
 
-    <Separator/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin" styleClass="primary-btn"/>
+            <Button text="Clear" onAction="#handleClear" styleClass="secondary-btn"/>
+        </HBox>
 
-    <HBox spacing="10" alignment="CENTER">
-        <Button text="Register Farmer" onAction="#goFarmerRegister"/>
-        <Button text="Register Buyer" onAction="#goBuyerRegister"/>
-    </HBox>
+        <Separator/>
 
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Register Farmer" onAction="#goFarmerRegister" styleClass="secondary-btn"/>
+            <Button text="Register Buyer" onAction="#goBuyerRegister" styleClass="secondary-btn"/>
+        </HBox>
+
+    </VBox>
 
 </VBox>
