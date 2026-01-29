@@ -9,53 +9,60 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.agriconnect.controller.FarmerController">
 
-
+    <!-- Top Bar -->
     <top>
-        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color:#f4f4f4;">
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="topbar">
             <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
-            <Button text="Back" onAction="#goBack"/>
-            <Label text="Manage Products" style="-fx-font-size:18px; -fx-font-weight:bold;"/>
+
+            <Button text="Back" onAction="#goBack" styleClass="secondary-btn"/>
+            <Label text="Manage Products" styleClass="title"/>
         </HBox>
     </top>
 
+    <!-- Main Content -->
     <center>
-        <VBox spacing="12">
-            <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+        <VBox spacing="14">
+            <padding><Insets top="14" right="20" bottom="20" left="20"/></padding>
 
-            <TableView fx:id="productTable" prefHeight="260">
+            <!-- Table Section -->
+            <TableView fx:id="productTable" prefHeight="300">
                 <columns>
-                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
-                    <TableColumn fx:id="colName" text="Name" prefWidth="180"/>
-                    <TableColumn fx:id="colPrice" text="Price" prefWidth="100"/>
-                    <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="70"/>
+                    <TableColumn fx:id="colName" text="Name" prefWidth="200"/>
+                    <TableColumn fx:id="colPrice" text="Price" prefWidth="120"/>
+                    <TableColumn fx:id="colQty" text="Qty" prefWidth="100"/>
                 </columns>
             </TableView>
 
-            <GridPane hgap="10" vgap="10">
-                <columnConstraints>
-                    <ColumnConstraints percentWidth="20"/>
-                    <ColumnConstraints percentWidth="80"/>
-                </columnConstraints>
+            <!-- Form Card -->
+            <VBox spacing="12" styleClass="card">
+                <GridPane hgap="10" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="20"/>
+                        <ColumnConstraints percentWidth="80"/>
+                    </columnConstraints>
 
-                <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                <TextField fx:id="nameField" promptText="e.g. Tomatoes"
-                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" promptText="e.g. Tomatoes"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-                <Label text="Price:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                <TextField fx:id="priceField" promptText="e.g. 50.00"
-                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Price:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="priceField" promptText="e.g. 50.00"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-                <Label text="Quantity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                <TextField fx:id="qtyField" promptText="e.g. 10"
-                           GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-            </GridPane>
+                    <Label text="Quantity:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="qtyField" promptText="e.g. 10"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
 
-            <HBox spacing="10" alignment="CENTER">
-                <Button text="Add" onAction="#addProduct"/>
-                <Button text="Update" onAction="#updateProduct"/>
-                <Button text="Delete" onAction="#deleteProduct"/>
-                <Button text="Clear" onAction="#clearFields"/>
-            </HBox>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Add" onAction="#addProduct" styleClass="primary-btn"/>
+                    <Button text="Update" onAction="#updateProduct" styleClass="primary-btn"/>
+                    <Button text="Delete" onAction="#deleteProduct" styleClass="secondary-btn"/>
+                    <Button text="Clear" onAction="#clearFields" styleClass="secondary-btn"/>
+                </HBox>
+            </VBox>
+
         </VBox>
     </center>
 
