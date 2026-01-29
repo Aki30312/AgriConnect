@@ -11,14 +11,18 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        // Load FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainScene.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login.fxml"));
         Parent root = loader.load();
 
-        Scene scene = new Scene(root, 400, 300);
-        stage.setTitle("Agri-Connect");
+        Scene scene = new Scene(root,1000,700);
+        stage.setTitle("AgriConnect - Login");
+        MainApp.applyCss(scene);
         stage.setScene(scene);
         stage.show();
+    }
+    public static void applyCss(Scene scene) {
+        scene.getStylesheets().add(MainApp.class.getResource("/css/app.css").toExternalForm());
     }
 
 
