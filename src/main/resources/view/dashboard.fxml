@@ -4,7 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx"
+<BorderPane styleClass="dashboard-bg"
+            xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.agriconnect.controller.DashboardController">
 
@@ -22,7 +23,7 @@
     </top>
 
     <center>
-        <VBox fx:id="rootBox" spacing="16" alignment="CENTER">
+        <VBox fx:id="rootBox" spacing="16" alignment="CENTER" styleClass="dashboard-overlay">
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>

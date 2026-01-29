@@ -73,3 +73,16 @@
     -fx-size: 32px;
     -fx-border-color: transparent;
 }
+.login-bg {
+    -fx-background-image: url("/images/secondpg.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+ .dashboard-bg {
+     -fx-background-image: url("/images/pice.jpg");
+     -fx-background-size: cover;
+     -fx-background-position: center center;
+ }
+ .dashboard-overlay {
+     -fx-background-color: rgba(255, 255, 255, 0.55);
+ }
