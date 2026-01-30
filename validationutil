@@ -1,0 +1,41 @@
+package com.agriconnect.util;
+
+import java.util.regex.Pattern;
+
+public class ValidationUtil {
+
+    // Simple, safe email pattern for school projects
+    private static final Pattern EMAIL_PATTERN =
+            Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+
+    public static boolean isNullOrBlank(String s) {
+        return s == null || s.trim().isEmpty();
+    }
+
+    public static boolean isValidEmail(String email) {
+        return !isNullOrBlank(email) && EMAIL_PATTERN.matcher(email.trim()).matches();
+    }
+
+    public static boolean isValidPassword(String password) {
+        // Keep it simple: not empty and at least 4 chars (change if needed)
+        return !isNullOrBlank(password) && password.trim().length() >= 4;
+    }
+
+    public static boolean isPositiveInt(String value) {
+        try {
+            int n = Integer.parseInt(value.trim());
+            return n > 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean isPositiveDouble(String value) {
+        try {
+            double n = Double.parseDouble(value.trim());
+            return n > 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}
