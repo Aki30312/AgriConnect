@@ -27,8 +27,7 @@ public class LoginController {
             Scene scene = new Scene(root, 1000, 700);
             MainApp.applyCss(scene);
 
-            stage.setScene(scene);   // ✅ use the styled scene
-
+            stage.setScene(scene);   //
         } catch (Exception e) {
             e.printStackTrace();
         }
