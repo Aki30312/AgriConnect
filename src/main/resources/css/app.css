@@ -1,0 +1,88 @@
+/* 🌿 Global */
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: linear-gradient(to bottom, #e8f5e9, #ffffff);
+}
+
+/* Titles */
+.title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e7d32;
+}
+
+.subtitle {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #388e3c;
+}
+
+/* Top bar */
+.topbar {
+    -fx-background-color: #a5d6a7;
+    -fx-padding: 10;
+}
+
+/* Card container */
+.card {
+    -fx-background-color: white;
+    -fx-padding: 18;
+    -fx-border-color: #c8e6c9;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0.2, 0, 2);
+}
+
+/* Primary buttons (main actions) */
+.primary-btn {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #43a047;
+}
+
+/* Secondary buttons */
+.secondary-btn {
+    -fx-background-color: #c8e6c9;
+    -fx-text-fill: #2e7d32;
+    -fx-background-radius: 8;
+}
+
+.secondary-btn:hover {
+    -fx-background-color: #a5d6a7;
+}
+
+/* Table styling */
+.table-view {
+    -fx-border-color: #c8e6c9;
+    -fx-border-radius: 6;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #a5d6a7;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 32px;
+    -fx-border-color: transparent;
+}
+.login-bg {
+    -fx-background-image: url("/images/secondpg.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+ .dashboard-bg {
+     -fx-background-image: url("/images/secondpg.jpg");
+     -fx-background-size: cover;
+     -fx-background-position: center center;
+ }
+ .dashboard-overlay {
+     -fx-background-color: rgba(255, 255, 255, 0.55);
+ }

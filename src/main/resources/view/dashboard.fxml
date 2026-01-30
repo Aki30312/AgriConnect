@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane styleClass="dashboard-bg"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agriconnect.controller.DashboardController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="topbar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="AgriConnect" styleClass="title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <Button text="Logout" onAction="#handleLogout" styleClass="secondary-btn"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox fx:id="rootBox" spacing="16" alignment="CENTER" styleClass="dashboard-overlay">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <VBox spacing="12" alignment="CENTER" styleClass="card" maxWidth="340">
+                <Label text="Choose your role" styleClass="subtitle"/>
+
+                <Button text="Farmer Dashboard" onAction="#goProducts"
+                        styleClass="primary-btn" maxWidth="260"/>
+
+                <Button text="Buyer Dashboard" onAction="#goOrders"
+                        styleClass="primary-btn" maxWidth="260"/>
+
+                <Separator/>
+
+                <Label text="(Testing)" />
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Products" onAction="#goProducts" styleClass="secondary-btn"/>
+                    <Button text="Orders" onAction="#goOrders" styleClass="secondary-btn"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

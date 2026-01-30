@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.agriconnect.controller.LoginController"
+      styleClass="login-bg">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <!-- Card container so it doesn't stretch across the whole window -->
+    <VBox spacing="12" alignment="CENTER" styleClass="card" maxWidth="380">
+
+        <Label text="AgriConnect Login" styleClass="title"/>
+
+        <TextField fx:id="emailField" promptText="Email" maxWidth="280"/>
+        <PasswordField fx:id="passwordField" promptText="Password" maxWidth="280"/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin" styleClass="primary-btn"/>
+            <Button text="Clear" onAction="#handleClear" styleClass="secondary-btn"/>
+        </HBox>
+
+        <Separator/>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Register Farmer" onAction="#goFarmerRegister" styleClass="secondary-btn"/>
+            <Button text="Register Buyer" onAction="#goBuyerRegister" styleClass="secondary-btn"/>
+        </HBox>
+
+    </VBox>
+
+</VBox>

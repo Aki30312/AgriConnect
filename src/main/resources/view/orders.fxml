@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.agriconnect.controller.BuyerController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="topbar">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+            <Button text="Back" onAction="#goBack" styleClass="secondary-btn"/>
+            <Label text="My Orders" styleClass="title"/>
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="14">
+            <padding><Insets top="14" right="20" bottom="20" left="20"/></padding>
+
+            <!-- Orders Table -->
+            <TableView fx:id="ordersTable" prefHeight="320">
+                <columns>
+                    <TableColumn fx:id="colOrderId" text="Order ID" prefWidth="90"/>
+                    <TableColumn fx:id="colProduct" text="Product" prefWidth="220"/>
+                    <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+                    <TableColumn fx:id="colTotal" text="Total" prefWidth="120"/>
+                    <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+                </columns>
+            </TableView>
+
+            <!-- Place Order Form -->
+            <TitledPane text="Place Order" expanded="true">
+                <VBox spacing="12" styleClass="card">
+                    <GridPane hgap="10" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="25"/>
+                            <ColumnConstraints percentWidth="75"/>
+                        </columnConstraints>
+
+                        <Label text="Product ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="productIdField" promptText="e.g. 1"
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="260"/>
+
+                        <Label text="Quantity:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="orderQtyField" promptText="e.g. 2"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="260"/>
+                    </GridPane>
+
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button text="Place Order" onAction="#placeOrder" styleClass="primary-btn"/>
+                        <Button text="Clear" onAction="#clearOrderFields" styleClass="secondary-btn"/>
+                    </HBox>
+                </VBox>
+            </TitledPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>
